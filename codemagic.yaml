@@ -4,8 +4,6 @@ workflows:
     instance_type: mac_mini_m1
     max_build_duration: 60
     environment:
-      groups:
-        - firebase_credentials # Optional: Add your firebase related env vars here
       flutter: stable
       xcode: latest
       cocoapods: default
@@ -19,7 +17,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - user@example.com # Update with your email
+          - smitpatdiya7452@gmail.com
 
   ios-workflow:
     name: iOS Workflow
@@ -36,11 +34,15 @@ workflows:
         script: |
           cd ios
           pod install
-      - name: Build iOS IPA
-        script: flutter build ipa --release --no-codesign # Change to your signing requirements
+      - name: Build iOS IPA (No-Sign Package)
+        script: |
+          flutter build ios --release --no-codesign
+          mkdir -p build/ios/iphoneos/Payload
+          cp -R build/ios/iphoneos/Runner.app build/ios/iphoneos/Payload
+          cd build/ios/iphoneos && zip -r vdandsons_app.ipa Payload
     artifacts:
-      - build/ios/ipa/*.ipa
+      - build/ios/iphoneos/*.ipa
     publishing:
       email:
         recipients:
-          - user@example.com # Update with your email
+          - smitpatdiya7452@gmail.com
