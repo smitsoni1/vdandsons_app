@@ -12,6 +12,8 @@ class AppColors {
 
   // UI Colors
   static const Color white = Color(0xFFFFFFFF);
+  static const Color white70 = Color(0xB3FFFFFF);
+  static const Color white54 = Color(0x8AFFFFFF);
   static const Color grey = Color(0xFF8E8E93);
   static const Color glassBackground = Color(0x1AFFFFFF);
 
