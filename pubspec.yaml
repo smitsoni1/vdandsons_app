@@ -1,0 +1,33 @@
+name: vdandsons_app
+description: A new Flutter project for VD & Sons Jewellers.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: any
+  cloud_firestore: any
+  firebase_storage: any
+  firebase_messaging: any
+  provider: any
+  cached_network_image: any
+  url_launcher: any
+  shared_preferences: any
+  google_fonts: any
+  flutter_svg: any
+  video_player: any
+  intl: any
+  flutter_staggered_grid_view: any
+  animate_do: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
